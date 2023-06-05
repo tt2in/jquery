@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-탐색선택자</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <section>
+        <h1>탐색 선택자</h1>
+        <ul id="menu_1">
+            <li>메뉴 1_1</li>
+            <li>메뉴 1_2</li>
+            <li>메뉴 1_3</li>
+            <li>메뉴 1_4</li>
+            <li>메뉴 1_5</li>
+            <li>메뉴 1_6</li>
+            <li>메뉴 1_7</li>
+        </ul>
+        <ul id="menu_2">
+            <li>메뉴 2_1</li>
+            <li>메뉴 2_2</li>
+            <li>메뉴 2_3</li>
+            <li>메뉴 2_4</li>
+            <li>메뉴 2_5</li>
+        </ul>
+    </section>
+
+    <script>
+        // $('li:first').css('border','5px solid red') //li 중 제일 첫번째 요소
+        // $('li').first().css('border','5px solid red') //위랑 똑같은 코드
+        // $('li:last').css('border','5px solid blue') //li 중 제일 마지막 요소
+        // $('li').last().css('border','5px solid blue') //위랑 똑같은 코드
+        // $('li:odd').css('border','5px solid orange') //홀수 '인덱스' 선택 (0부터 시작)
+        // $('li:even').css('border','5px solid yellow') //짝수 '인덱스' 선택 (0부터 시작)
+
+        // $('li:nth-child(2)').css('border','5px solid red') //'n번째' 요소 선택. 즉, 요소 무리 중 선택
+        // $('li:nth-child(3n)').css('border','5px solid blue') //'n배수 번째' 요소 선택. 즉, 요소 무리 중 선택
+
+        $('li:eq(1)').css('border','5px solid red') //요소 중 '인덱스' 선택
+        $('li').eq(6).css('border','5px solid red') //요소 중 '인덱스' 선택
+        $('li:gt(5)').css('border','5px solid blue') //요소 중 인덱스 n 보다 큰 것들 선택
+        $('li:lt(4)').css('border','5px solid green') //요소 중 인덱스 n 보다 작은 것들 선택
+        $('li').slice(7).css('border','5px solid black') //요소 중 인덱스 n부터 선택
+    </script>
+</body>
+</html>

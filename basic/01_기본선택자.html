@@ -15,10 +15,10 @@
         <h4 class="sub_title">제목 4</h4>
     </section>
 
-    <section>
+    <section class="section">
         <h1 class="title_1">인접 관계 선택자</h1>
-        <h1 class="title_2">제목 2</h1>
-        <h1 class="title_3">제목 3</h1>
+        <h2 class="title_2">제목 2</h2>
+        <h3 class="title_3">제목 3</h3>
         <p class="text_1">내용 1</p>
         <p class="text_2">내용 2</p>
         <p class="text_3">내용 3</p>
@@ -52,8 +52,17 @@
             // $('h1.logo').css('color','white') //종속 선택자(요소 중 특정 선택)
 
             //인접 관계 선택자
-            $('h2').parent().css('border','2px solid #666')
-
+            $('h2').parent().css('border','2px solid #666') //h2를 가지고 있는 부모요소를 선택
+            $('#wrap h1').css('color','red') //하위요소
+            $('#list>li').css('border','1px solid pink') //바로 밑 자식만 선택
+            $('.section h2').prev().css('color','green') //선택한 인자의 앞(prev) 요소 선택
+            $('.section h2').next().css('color','skyblue') //선택한 인자의 뒤(next) 요소 선택
+            $('.section h3').prevAll().css('color','tomato') //선택한 인자의 모두 앞(next) 요소 선택
+            $('.section h3').nextAll().css('color','orange') //선택한 인자의 모두 뒤(next) 요소 선택
+            $('.section h3').siblings().css('border','2px solid black') //형제요소 선택
+            $('.sub_item_1').parents().css('border', '3px solid yellow') //상위 요소 모두
+            $('.sub_item_1').parents('#list').css('border', '3px solid green') //상위 중 선택한 요소만
+            $('.sub_item_1').closest('ul').css('border', '10px solid orange') //가장 가까운 상위 선택 요소
         })
     </script>
 </body>
