@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-each</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>light box</h1>
+        <ul class="cards">
+            <li><img src="../images/img_01.jpg" data-img="../images/img_01_b.jpg"></li>
+            <li><img src="../images/img_02.jpg" data-img="../images/img_02_b.jpg"></li>
+            <li><img src="../images/img_03.jpg" data-img="../images/img_03_b.jpg"></li>
+            <li><img src="../images/img_04.jpg" data-img="../images/img_04_b.jpg"></li>
+        </ul>
+    </div>        
+    <div class="dim">
+        <img src="" alt="">
+    </div>
+    <script>
+        $('.cards li').click(function(){
+            let dataImg = $(this).find('img').attr('data-img')
+            $('.dim').addClass("show")
+            $('.dim').find('img').attr('src',dataImg)
+            $('.dim').click(function(){
+                $(this).removeClass('show')
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-이벤트 등록과 제거</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+   <h1>이벤트 등록과 제거</h1>
+   <section>
+    <button class="btn1">버튼1</button>
+    <p>내용 1</p>
+    <button class="btn2">버튼2</button>
+    <p>내용 2</p>
+   </section>
+
+   <script>
+    //이벤트 등록
+    $('.btn1').click(function(){
+        $(this).next().text('hello')
+    })
+    // $('.btn2').on('mouseover focus',function(){
+    //     $(this).next().text('안녕하세요')
+    // })   // on 은 다중이벤트 가능
+
+    $('.btn2').on(
+        {'mouseover focus' : function(){
+            $(this).next().text('어서오세요')
+    },'mouseleave blur' : function(){
+            $(this).next().text('안녕히가세요')
+        }}
+    )
+
+
+    //이벤트 강제 발생
+    $('.btn1').click()   //위에 있는명령 자동시행
+    $('.btn2').trigger('mouseover')
+
+
+    //이벤트 제거
+    $('.btn2').off('mouseleave')  //근데 blur는 살아있어서 tab으로 시행시 됨
+
+
+    //로딩이벤트 : load, ready, error
+    //마우스이베트 : click, dbclick(2번클릭), hover, mouseover, mouseleave,
+    //  mouseenter, mouseout, mouseup, mousedown, mousemove, scroll...
+    //포커스이벤트 : focus, blur, focusin, focusout, change
+    //키보드이벤트 : keypress, keydown, keyup
+   </script>
+</html>

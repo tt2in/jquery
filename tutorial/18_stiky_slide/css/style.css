@@ -1,0 +1,220 @@
+.ready_box {
+    width: 1000px;
+    height: 1000px;
+    background-color: #eee;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.gnb {
+    display: flex;
+    align-items: center;
+}
+
+.gnb a {
+    display: block;
+    height: 80px;
+    padding: 0 30px;
+    line-height: 80px;
+}
+
+.gnb li.active a{
+    color: tomato;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.slider{
+    position: relative;
+}
+
+
+.slide .item {
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide .item.item_01 {
+    background-image: url('../../images/slide_01.jpg');
+}
+.slide .item.item_02 {
+    background-image: url('../../images/slide_02.jpg');
+}
+.slide .item.item_03 {
+    background-image: url('../../images/slide_03.jpg');
+}
+
+.slide_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.slide_text h4 {
+    font-size: 60px;
+    margin-bottom: 30px;
+    animation-name: ani_scale;
+    animation-duration: 0.3s;
+}
+
+.slide_text i {
+    font-size: 40px;
+    animation-name: ani_rotate;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.slide_text p {
+    margin: 20px 0;
+    animation-name: ani_top_bottom;
+    animation-duration: 0.5s;
+    animation-delay: 0.8s;
+    position: relative;       
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.slide_text .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #054dea;
+    color: #fff;
+    border-radius: 4px;
+    animation-name: ani_bottom_top;
+    animation-duration: 0.5s;
+    animation-delay: 1s;
+    position: relative;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;   
+}
+
+.arrows img {
+    opacity: 0.6;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.arrows img:hover {
+    opacity: 1;
+}
+
+section {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+section p {
+    line-height: 1.8;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.cards img {
+    width: 100%;
+    display: block;
+}
+
+
+.big_banner {
+    min-height: 500px;   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: transparent;
+    position: relative;
+}
+
+.big_banner .text {
+    font-size: 100px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.slide_02 {
+    margin: 50px 0 80px !important;
+}
+
+.slide_02 img {
+    display: block;
+    width: 100%;
+}
+
+footer{
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+/* slick-custom */
+.slide .slick-dots {
+    bottom: 10px;
+}
+
+.slide .slick-dots li {
+    width: 30px;
+    height: 4px;
+    background-color: rgba(0,0,0,0.3);
+    transition: all 0.3s;
+}
+
+.slide .slick-dots li.slick-active {
+    width: 80px;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.slide .slick-dots li button::before {
+    font-size: 0;
+}
+
+
+/* slick-custom - slide_02*/
+
+.slide_02 .slick-dots {
+    bottom: -35px;
+}
+
+.slide_02 .slick-dots li button::before {
+    font-size: 16px;
+}

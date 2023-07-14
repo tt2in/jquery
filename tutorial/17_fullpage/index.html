@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery-auto slider</title>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"
+      integrity="sha512-/AilQf/shuEGfh8c3DoIqcIqHZCKpiImSyt+fxIKJphHiNa6QMPb6AbDly6rkjmGr/5OZd35JtvVkbEKnCZO+A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="../script/jquery-1.12.4.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"
+      integrity="sha512-XOpdFagEEv9XMxN/2EdvFL/PfGtFDjX+AkRznsFHDtdC05YWdkMnz5JZUfrbnEabOQaMc7YNTl2xPbOu3J858Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="header">
+      <span class="bars"><i class="xi-bars"></i></span>
+    </div>
+
+    <ul class="nav">
+      <li><a href="#" data-menuanchor="page1" href="#page1">html</a></li>
+      <li><a href="#" data-menuanchor="page2" href="#page2">css</a></li>
+      <li><a href="#" data-menuanchor="page3" href="#page3">javascript</a></li>
+      <li><a href="#" data-menuanchor="page4" href="#page4">jquery</a></li>
+    </ul>
+    <div class="fullpage">
+      <div class="section">
+        <div class="item">
+          <h4>hello html</h4>
+          <ul class="photos">
+            <li><img src="../images/img_01.jpg" alt="" /></li>
+            <li><img src="../images/img_02.jpg" alt="" /></li>
+            <li><img src="../images/img_03.jpg" alt="" /></li>
+            <li><img src="../images/img_04.jpg" alt="" /></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="item">
+          <h4>hello css</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
+            molestias totam. A commodi possimus ducimus odit quasi numquam
+            deserunt, eligendi doloremque iusto, veniam consequuntur! Rem sequi
+            minima dicta eius architecto veniam odit vitae nihil animi.
+            Necessitatibus labore doloribus inventore eius incidunt velit facere
+            nostrum dolorem, libero, cum iure provident atque.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p>javascript</p>
+      </div>
+
+      <div class="section">
+        <p>jquery</p>
+      </div>
+    </div>
+    <section></section>
+
+    <script>
+      $(".bars").click(function () {
+        $(".nav").toggleClass("active");
+        if ($(this).find("i").hasClass("xi-bars")) {
+          $(this).find("i").attr("class", "xi-angle-left");
+        } else {
+          $(this).find("i").attr("class", "xi-bars");
+        }
+      });
+
+      $(".fullpage").fullpage({
+        //options here
+        autoScrolling: true,
+        scrollHorizontally: true,
+        menu: ".nav",
+        anchors: ["page1", "page2", "page3", "page4"],
+        navigation: true,
+      });
+    </script>
+  </body>
+</html>

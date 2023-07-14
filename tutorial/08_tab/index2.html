@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-tab</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style2.css">
+    <script src="../script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>tab2</h1>
+        <div id="tab">
+            <ul class="tab">
+                <li><a href="#">tab 1</a></li>
+                <li><a href="#">tab 2</a></li>
+                <li><a href="#">tab 3</a></li>
+            </ul>
+            <div class="tab_content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam perferendis totam, blanditiis illum porro tempore unde sunt fugiat amet nisi, architecto eius error eligendi eaque nemo magni sapiente. Ratione, laboriosam!
+            </div>
+            <div class="tab_content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam perferendis totam, blanditiis illum porro tempore unde sunt fugiat amet nisi, architecto eius error eligendi eaque nemo magni sapiente. Ratione, laboriosam!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, ipsa! Assumenda voluptas vero deleniti nihil nisi culpa, fugit saepe? Harum, libero ipsum sapiente eius reprehenderit corrupti sit dolorum autem ducimus?
+            </div>
+            <div class="tab_content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam perferendis totam, blanditiis illum porro tempore unde sunt fugiat amet nisi, architecto eius error eligendi eaque nemo magni sapiente. Ratione, laboriosam!
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora eius vero dolor possimus error illo ipsam vel maiores unde?
+            </div>
+        </div>
+    </div>        
+
+    <script>
+        $('.tab li').eq(0).addClass('active')
+        $('.tab_content').hide().eq(0).show()
+        
+        $('.tab li').click(function(){
+            $('.tab li').removeClass('active')
+            $(this).addClass('active')
+            $('.tab_content').hide()
+
+            var idx = $(this).index()
+            $('.tab_content').eq(idx).show()
+        })
+    </script>
+</body>
+</html>

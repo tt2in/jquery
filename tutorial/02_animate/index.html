@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-animate</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>animate</h1>
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="text">hello jquery</div>
+        <div class="btns">
+            <button class="btn1">button1</button>
+            <button class="btn2">button2</button>
+            <button class="btn3">button3</button>
+            <button class="btn4">button4</button>
+        </div>
+    </div>
+
+    <script>
+        $('.btn1').click(function(){
+            $('.box1').stop().animate({width:600},1000)
+        })
+        $('.btn2').on('click',function(){
+            $('.box2').stop().animate({width:400},3000,'easeOutElastic',function(){
+                $('.box2').animate({width:500},1000)
+            })
+        })
+        $('.btn3').on('click',function(){
+            $('.box3').stop().animate({width:400, height:400},'fast')
+        })
+        $('.btn4').on('click',function(){
+            $('.box4').animate({left:500},1000, function(){
+                $(this).animate({width:30, height:30},1000, function(){
+                    $(this).animate({left:0},1000, function({
+                        $(this).animate({width:100, height:100},1000)
+                    }))
+                })
+            })
+        })
+        $('.text').on('mouseover',function(){
+            $(this).stop().animate({fontSize:50},'fast')
+        }).on('mouseleave',function(){
+            $(this).stop().animate({fontSize:14},'slow')
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-키보드이벤트</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+   <h1>키보드 이벤트</h1>
+    <p>
+        <input type="text" id="keyValue">
+    </p>
+
+    <script>
+        //keydown: 이벤트가 모든 키에 발생(한글은 안 됨)
+        //keypress: 이벤트가 기능키(화살표, f1~f12, alt, ctrl...)를 제외한 모든 키에 발생
+        //keyup
+
+        $(document).on('keydown',keyFnc)
+        function keyFnc(e){
+            var result = ''
+            switch (e.keyCode) {
+                case 37:
+                    result = 'left'
+                    break;
+                case 38:
+                    result = 'top'
+                    break;
+                case 39:
+                    result = 'right'
+                    break;
+                case 40:
+                    result = 'bottom'
+                    break;
+            
+                default:
+                    result=e.keyCode
+            }
+            $('#keyValue').val(result)
+        }
+    </script>
+</body>
+</html>

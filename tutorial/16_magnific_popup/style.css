@@ -1,0 +1,69 @@
+.main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.btns {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btns a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 12px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+#modal {
+  width: 300px;
+  padding: 30px;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main p {
+  margin-top: 30px;
+}
+
+.single,
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery a {
+  display: block;
+  height: 200px;
+}
+
+.galley a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.box {
+  width: 300px;
+  padding: 30px;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

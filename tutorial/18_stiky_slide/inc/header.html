@@ -1,0 +1,32 @@
+<header>
+    <h1>가나다</h1>
+    <nav>
+        <ul class="gnb">
+            <li><a href="../pages/main.html">홈</a></li>
+            <li><a href="../pages/intro.html">소개</a></li>
+            <li><a href="../pages/service.html">서비스</a></li>
+            <li><a href="../pages/value.html">가치</a></li>
+            <li><a href="#x">홍보</a></li>
+            <li><a href="#x">투자</a></li>
+            <li><a href="#x">채용</a></li>
+        </ul>
+    </nav>
+    <button>로그인</button>
+</header>
+
+<script>   
+      var str = location.pathname
+
+if (str.includes('main')) {
+    $('.gnb li').eq(0).addClass('active')
+}
+if (str.includes('intro')) {
+    $('.gnb li').eq(1).addClass('active')
+}
+if (str.includes('service')) {
+    $('.gnb li').eq(2).addClass('active')
+}
+if (str.includes('value')) {
+    $('.gnb li').eq(3).addClass('active')
+}
+</script>

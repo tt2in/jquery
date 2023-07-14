@@ -1,0 +1,50 @@
+@keyframes ani_scale {
+  /* from {background-color: red;}
+  to {background-color: yellow;} */
+
+  0% {
+    transform: scale(3);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ani_rotate {
+  0% {
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes ani_top_bottom {
+  0% {
+      opacity: 0;
+      top: -20px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes ani_bottom_top {
+  0% {
+      opacity: 0;
+      top: 20px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}

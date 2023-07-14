@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-accordion</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>accordion</h1>
+        <div class="accordion">
+            <div class="text_box">
+            <h3>title1</h3>
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum laboriosam suscipit unde animi nemo consequatur impedit ab ipsum quo natus, maiores nisi sit et, porro voluptatibus tempora tenetur, eaque nam?
+            </p>
+            
+        </div>
+        <div class="text_box">
+            <h3>title2</h3>
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum laboriosam suscipit unde animi nemo consequatur impedit ab ipsum quo natus, maiores nisi sit et, porro voluptatibus tempora tenetur, eaque nam?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptas asperiores necessitatibus esse eos, vero quibusdam nihil et quis eligendi nesciunt fugiat totam eius veniam blanditiis maxime pariatur! Aliquid, quis?
+            </p>
+            
+        </div>
+        <div class="text_box">
+            <h3>title3</h3>
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum laboriosam suscipit unde animi nemo consequatur impedit ab ipsum quo natus, maiores nisi sit et, porro voluptatibus tempora tenetur, eaque nam?
+            </p>
+            
+        </div>
+    </div>        
+
+    <script>
+        $('.text_box:first').find('h3').addClass('active')
+        $('.text_box:first').find('p').slideDown()
+        // $('.text_box h3').on('click',function(){
+        //     $(this).toggleClass('active').next().slideToggle()
+        // })
+        $('.text_box h3').on('click',function(){
+            if($(this).hasClass('active')){
+                $('.text_box').find('p').slideUp()
+                $(this).removeClass('active').next().slideUp()
+            }else{
+                $('.text_box h3').removeClass('active')
+                $('.text_box').find('p').slideUp{}
+                $(this).addClass('active').next().slideDown()
+                        }
+        })
+    </script>
+</body>
+</html>

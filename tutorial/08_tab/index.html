@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-tab</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>tab</h1>
+        <ul class="tab">
+            <li><a class="active" href="#">tab 1</a></li>
+            <li><a href="#">tab 2</a></li>
+            <li><a href="#">tab 3</a></li>
+            <li><a href="#">tab 4</a></li>
+        </ul>
+        <div class="content">
+            <img src="../images/img_01.jpg" alt="">
+        </div>
+        <div class="content">
+            <img src="../images/img_02.jpg" alt="">
+        </div>
+        <div class="content">
+            <img src="../images/img_03.jpg" alt="">
+        </div>
+        <div class="content">
+            <img src="../images/img_04.jpg" alt="">
+        </div>
+    </div>        
+
+    <script>
+        $('.tab li').eq(0).find('a').addClass('active')
+        $('.content').hide().eq(0).show()
+
+        $('.tab li').click(function(){
+            $('.tab li').find('a').removeClass('active')
+            $(this).find('a').addClass('active')
+
+            $('.content').hide()
+            var idx = $(this).index()
+            $('.content').eq(idx).show()
+        })
+    </script>
+</body>
+</html>

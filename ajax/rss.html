@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <style>
+        .wrap{
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+       .c_title{
+        font-size: 20px;
+        margin-bottom: 40px;
+       }
+       .list ul{
+        font-size: 14px;
+        color: #333;
+        list-style: none;
+       }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="channelTitle"></div>
+        <div class="list"></div>
+    </div>
+
+    <script>
+    $.ajax({
+        url:'https://www.hani.co.kr/rss/',
+        success:function(data){
+            console.log(data)
+            channelTitle = $(data).find('channel title').text()
+            $('.channelTitle').addClass('c_title').text(channelTitle.slice(0,30))
+
+            var items = $(data).find('item')
+            var ul = $('<ul />')
+            $.each(items, function(i, item){
+                console.log(item)
+                // title
+                // link
+                // pubDate
+                // dc:category
+                // description
+                var title = $(item).find('title').text()
+                var link = $(item).find('link').text()
+                var pubDate = $(item).find('pubDate').text()
+                var category = $(item).find('dc\\:category').text()
+                var description = $(item).find('description').text()
+
+                var row = $('<li />').append(
+                    $('<div />').addClass('category').text(category),
+                    $('<div />').addClass('title').text(title),
+                    $('<div />').addClass('date').text(moment(pubDate).format('YYYY-MM-DD hh:mm:ss')),
+                    $('<a />').html(description).attr({
+                        href: link, target: '_blank'
+                    }),
+                    
+                )
+                ul.append(row)
+            })
+            $('.list').append(ul)
+        }
+    }
+    )
+    </script>
+</body>
+</html>

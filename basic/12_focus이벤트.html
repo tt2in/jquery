@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-focus이벤트</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+    <style>
+        .wrap{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 10px;
+        }
+        section{
+            padding: 30px;
+            border: 1px solid salmon;
+        }
+    </style>
+</head>
+<body>
+   <h1>focus 이벤트</h1>
+    <div class="wrap">
+        <section>
+            <form action="" id="form1">
+                <h2>focus / blur</h2>
+                <div>
+                    <label for="user_id">id</label>
+                    <input type="text" id="user_id">
+                </div>
+                <div>
+                    <label for="user_pw">password</label>
+                    <input type="password" id="user_pw">
+                </div>
+            </form>
+        </section>
+        <section>
+            <form action="" id="form2">
+                <h2>focusin / focusout</h2>
+                <div>
+                    <label for="user_name">name</label>
+                    <input type="text" id="user_name">
+                </div>
+                <div>
+                    <label for="user_ph">phone</label>
+                    <input type="text" id="user_ph">
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        //focus, blur
+        $('#user_id, #user_pw').on('focus',function(){
+            $(this).css('background','lightpink')
+        })
+        $('#user_id, #user_pw').on('blur',function(){
+            $(this).css('background','#ddd')
+        })
+
+
+        //focusin, focusdown
+        $('#form2').on('focusin',function(){
+            $(this).css('background','yellow')
+        })
+        $('#form2').on('focusout',function(){
+            $(this).css('background','#eee')
+        })
+    </script>
+</body>
+</html>

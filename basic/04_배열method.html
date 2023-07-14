@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-배열 method</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <section>
+        <h1>배열 관련 method</h1>
+        <ul id="menu1">
+            <li>내용 1-1</li>
+            <li>내용 1-2</li>
+            <li>내용 1-3</li>
+        </ul>
+        <ul id="menu2">
+            <li>내용 2-1</li>
+            <li>내용 2-2</li>
+            <li>내용 2-3</li>
+        </ul>
+    </section>
+    <script>
+        {
+            //each method : 안에 있는 배열(item)을 불러옴
+            let books = [
+                {title: "html"},
+                {title: "css"},
+                {title: "javascript"},
+            ]
+            $(books).each(function(index, item){
+                console.log(index + ':' + item.title)
+            })
+
+            $.each(books, function(index, item){
+                console.log(`${index +1} : ${item.title}`)
+            })
+
+            $('#menu1 li').each(function(index, item){
+                console.log(index + ':' + $(item).text())
+            })
+
+            var menu2 = $('#menu2 li')
+            $.each(menu2, function(i,item){
+                console.log(i + ':' + $(this).text())
+            })
+            $.each(menu2, function(){
+                console.log($(this).text())
+            })   
+        }
+        
+        {
+            //map method : 배열을 가지고 새로운 배열을 만듦
+            let user = [
+                {name:'kim', city:'seoul'},
+                {name:'park', city:'busan'},
+                {name:'lee', city:'seoul'},
+                {name:'cheo', city:'jeju'},
+            ]
+            let count = [1,2,3,4,5]
+            let count2 = {name:'alice'}
+
+            let newUser = $.map(user, function(item){
+                if(item.city === 'seoul') return item
+            })
+            console.log(newUser)
+
+            let c = $.inArray(4, count)
+            console.log(c)   //데이터 값을 찾아서 인덱스 반환
+
+            console.log($.isArray(count))    //true
+            console.log($.isArray(count2))    //false
+
+            let d = $.merge(user, count)   //두 배열을 합침
+            console.log(d)
+        }
+
+        {
+            // index method
+            var idx = $('#menu1 li').first().index()
+            console.log(idx)
+        }
+    </script>
+</body>
+</html>

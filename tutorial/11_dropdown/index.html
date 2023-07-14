@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-dropdown</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">가나다</div>
+                <ul class="gnb">
+                    <li>
+                        <a href="#">소개</a>
+                        <ul>
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">수상내역</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">소개</a>
+                        <ul>
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">수상내역</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="bars"></div>
+                <i class="xi-bars"></i>
+            </nav>
+        </header>
+        <div class="main">
+            <div class="slide"></div>
+            <section>
+                <h1>Lorem ipsum dolor sit amet.</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ipsa modi, commodi beatae deserunt in vero ea sapiente corrupti unde rerum id consequatur amet officiis, maxime nulla, culpa sit voluptatem numquam neque cum porro obcaecati soluta? Itaque expedita illo id perspiciatis cumque velit quia, tenetur debitis harum quidem eaque nihil inventore ea, unde fugit alias dolor, cupiditate autem iste impedit similique consequatur? Dolorem ex ab voluptatibus amet. Ullam blanditiis tempore quibusdam rem placeat vitae molestiae reprehenderit eaque, iste perferendis ex accusantium sit debitis porro doloremque quae, illum quia commodi nisi dolor possimus eius expedita rerum sunt? Harum maxime expedita doloremque?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ipsa modi, commodi beatae deserunt in vero ea sapiente corrupti unde rerum id consequatur amet officiis, maxime nulla, culpa sit voluptatem numquam neque cum porro obcaecati soluta? Itaque expedita illo id perspiciatis cumque velit quia, tenetur debitis harum quidem eaque nihil inventore ea, unde fugit alias dolor, cupiditate autem iste impedit similique consequatur? Dolorem ex ab voluptatibus amet. Ullam blanditiis tempore quibusdam rem placeat vitae molestiae reprehenderit eaque, iste perferendis ex accusantium sit debitis porro doloremque quae, illum quia commodi nisi dolor possimus eius expedita rerum sunt? Harum maxime expedita doloremque?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ipsa modi, commodi beatae deserunt in vero ea sapiente corrupti unde rerum id consequatur amet officiis, maxime nulla, culpa sit voluptatem numquam neque cum porro obcaecati soluta? Itaque expedita illo id perspiciatis cumque velit quia, tenetur debitis harum quidem eaque nihil inventore ea, unde fugit alias dolor, cupiditate autem iste impedit similique consequatur? Dolorem ex ab voluptatibus amet. Ullam blanditiis tempore quibusdam rem placeat vitae molestiae reprehenderit eaque, iste perferendis ex accusantium sit debitis porro doloremque quae, illum quia commodi nisi dolor possimus eius expedita rerum sunt? Harum maxime expedita doloremque?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ipsa modi, commodi beatae deserunt in vero ea sapiente corrupti unde rerum id consequatur amet officiis, maxime nulla, culpa sit voluptatem numquam neque cum porro obcaecati soluta? Itaque expedita illo id perspiciatis cumque velit quia, tenetur debitis harum quidem eaque nihil inventore ea, unde fugit alias dolor, cupiditate autem iste impedit similique consequatur? Dolorem ex ab voluptatibus amet. Ullam blanditiis tempore quibusdam rem placeat vitae molestiae reprehenderit eaque, iste perferendis ex accusantium sit debitis porro doloremque quae, illum quia commodi nisi dolor possimus eius expedita rerum sunt? Harum maxime expedita doloremque?</p>
+            </section>
+        </div>
+        <div class="dim"></div>      
+    </div>  
+
+    <script>
+        $('.gnb li').hover(
+            function(){
+                $('.gnb li ul').stop().slideDown('fast')
+                $('nav').addClass('active')
+                $('.dim').addClass('active')
+            },
+            function(){
+                $('.gnb li ul').stop().slideUp('fast')
+                $('nav').removeClass('active')
+                $('.dim').removeClass('active')
+            }
+        )
+    </script>
+</body>
+</html>

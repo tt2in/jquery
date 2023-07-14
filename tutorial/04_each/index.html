@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-each</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>each</h1>
+        <div class="card">
+            <div class="photo">
+                <img src="../images/img_01.jpg" alt="">
+                <div class="sns">
+                    <i class="xi-share"></i>
+                    <i class="xi-instagram"></i>
+                    <i class="xi-kakaostory"></i>
+                    <i class="xi-youtube-play"></i>
+                </div>
+            </div>
+            <div class="text_box">
+                <h2>this is title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, veniam illo. Expedita, magnam quam rerum dignissimos, laborum optio veritatis aliquam nostrum nisi id tempore? Vitae iusto dolorum quia aspernatur accusamus.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var item= $('.sns i')
+        $('.sns').hover(
+            function(){
+                item.each(function(index){
+                    $(this).stop().animate({left:index*50},300)
+                })
+            },
+            function(){
+                item.each(function(){
+                    $(this).stop().animate({left:0},300)
+                }) 
+            }
+        )
+    </script>
+</body>
+</html>

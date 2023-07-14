@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-dropdown</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>filter</h1>
+        <div class="btns">
+            <button data-id="all">all</button>
+            <button data-id="web">web</button>
+            <button data-id="ui">ui</button>
+            <button data-id="js">js</button>
+        </div>
+
+        <ul class="list">
+            <li data-item="web">1 <span>web</span></li>
+            <li data-item="ui">2 <span>ui</span></li>
+            <li data-item="web">3 <span>web</span></li>
+            <li data-item="web">4 <span>web</span></li>
+            <li data-item="js">5 <span>js</span></li>
+            <li data-item="ui">6 <span>ui</span></li>
+            <li data-item="js">7 <span>js</span></li>
+            <li data-item="web">8 <span>web</span></li>
+            <li data-item="js">9 <span>js</span></li>
+        </ul>
+    </div>        
+
+    <script>
+        $('.btns button').on('click',function(e){
+            $('.btns button').removeClass('active')
+            $(this).addClass('active')
+            
+            var category = e.currentTarget.dataset.id
+
+            if(category==='all'){
+                $('.list li').show()
+            }else{
+                $('.list li').hide().filter('[data-item =' + category + ']').show()
+            }
+        })
+    </script>
+</body>
+</html>

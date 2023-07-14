@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-마우스이벤트</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+    <style>
+        .wrap{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 10px;
+        }        
+        section{
+            padding: 30px;
+            border: 1px solid palevioletred;
+        }
+    </style>
+</head>
+<body>
+   <h1>마우스이벤트</h1>
+   <div class="wrap">
+       <section>
+           <button class="btn1">버튼1</button>
+           <p>내용1</p>
+           <button class="btn2">버튼2</button>
+           <p>내용2</p>
+       </section>
+       <section>
+        <ul id="box1">
+            <li><a href="#">내용1</a></li>
+            <li><a href="#">내용2</a></li>
+            <li><a href="#">내용3</a></li>
+        </ul>
+        <ul id="box2">
+            <li><a href="#">내용1</a></li>
+            <li><a href="#">내용2</a></li>
+            <li><a href="#">내용3</a></li>
+        </ul>
+       </section>
+       <section>
+            <h3>mousemove</h3>
+            <p>x : <span class="position_x"></span></p>
+            <p>y : <span class="position_y"></span></p>
+       </section>
+       <section>
+            <select id="site">
+                <option value="https://google.com">구글</option>
+                <option value="https://daum.net" selected>다음</option>
+                <option value="https://naver.com">네이버</option>
+            </select>
+            <p class="site">hello</p>
+            <p><a href="https://daum.net" class="btn">이벤트 객체</a></p>
+       </section>
+   </div>
+   
+   <script>
+    $('.btn1').click(function(){
+        $(this).next().css('background','lightpink')
+    })
+    $('.btn2').on({
+        'mouseover focus' : function(){
+            $(this).next().css('background','green')
+        },
+        'mouseleave blur' : function(){
+            $(this).next().css('background','orange')
+        }
+    })
+
+
+    $('#box1').on('mouseout',function(){
+        $('#box1 li').css('background','yellow')
+    })
+    $('#box2').on('mouseleave',function(){
+        $('#box2 li').css('background','skyblue')
+    })
+
+
+    $(document).on('mousemove',function(e){
+        $('.position_x').text(e.pageX)
+        $('.position_y').text(e.pageY)
+    })
+
+
+    //change
+    $('#site').on('change',function(){
+        $('.site').text($(this).val())
+    })
+    //이벤트 객체
+    $('.btn').click(function(e){
+        e.prevnetDefault()
+        console.log(e.target.text)
+    })
+   </script>
+</html>

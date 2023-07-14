@@ -1,0 +1,40 @@
+h1{
+    margin: 50px 0;
+    text-align: center;
+}
+
+.accordion{
+    width: 600px;
+    margin: 0 auto;
+}
+
+h3{
+    background-color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    position: relative;
+}
+
+h3::after{
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(-45deg);
+    transition: transform 0.2s;
+}
+
+h3.active::after{
+    transform: rotate(45deg);
+}
+
+.text{
+    background-color: #eee;
+    padding: 12px;
+    display: none
+}

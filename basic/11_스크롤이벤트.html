@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-스크롤이벤트</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+    <style>
+        section{
+            background-color: bisque;
+            width: 2000px;
+            height: 5000px;
+        }
+        h2{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 30px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+   <h1>스크롤이벤트</h1>
+   <h2>
+    <span class="scroll_x">?</span> | <span class="scroll_y">?</span>
+   </h2>
+   <section>
+        <p>hello</p>
+   </section>
+
+   <script>
+    $(window).scroll(function(){
+        $('.scroll_x').text($(this).scrollTop())
+        $('.scroll_y').text($(this).scrollLeft())
+    })
+   </script>
+</body>
+</html>

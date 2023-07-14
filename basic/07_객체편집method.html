@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-객체 편집 method</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+   <h1>객체 편집 매서드</h1>
+   <div class="wrap">
+        <p>내용 1</p>
+        <p>내용 11</p>
+        <p>내용 111</p>
+    </div>
+        
+        <ul class="list">
+            <li>리스트 1</li>
+        </ul>
+        <ul class="list2">
+            <li>lsit 2</li>
+        </ul>
+        <div class="box1">
+            <h2>제목 1</h2>
+            <div>내용 1</div>
+            <div>내용 2</div>
+        </div>
+        <div class="box2">
+            <h2>제목 2</h2>
+            <div>내용 3</div>
+            <div>내용 4</div>
+        </div>
+        <div class="box3">
+            <p class="title">안녕하세요 <span>jquery</span> 입니다.</p>
+            <p class="p1">내용 1</p>
+            <p class="p2">내용 2</p>
+            <p class="p3">내용 3</p>
+            <p class="p4">내용 4</p>
+
+            <ul>
+                <li>내용 5</li>
+                <li>내용 6</li>
+            </ul>
+        </div>
+</body>
+<script>
+    //before, insertBefore, after, insetAfter
+    $('.wrap p:eq(1)').before('<p>before</p>')   //index 1 앞에 내용이 들어감
+    $('<p>insert before</p>').insertBefore('.wrap p:eq(2)') //before 과 쓰는 형태가 뒤바뀜
+    //52번에 의해 before이라는 p구문이 index 1번이 됨. 그래서 내용 11이 2번이 되고 그 앞에 생성
+    $('.wrap p:eq(4)').after('<p>after</p>')   //index 4 뒤에 내용이 들어감
+    $('<p>insert after</p>').insertAfter('.wrap p:last') //after 와 쓰는 형태가 뒤바뀜
+
+
+    //append, appendTo, prepend, prependTo
+    $('.list').append('<li>리스트 2</li>')
+    $('<li>리스트3</li>').appendTo('.list')  //append는 항상 뒤에 붙음. 쓰는 문법이 다를 뿐.
+    $('.list').prepend('<li>리스트 0</li>')
+    $('<li>리스트 -1</li>').prependTo('.list')   //prepend는 항상 앞에.
+
+    
+    //clone, empty, remove
+    var cloneList = $('.list').children().clone()
+    console.log(cloneList)
+    $('.list2').append(cloneList)
+    $('.list2').empty()  //문서 상 없어지지만, f12 elements에는 li만 없어지고 ul흔적은 있음
+    $('.list2').remove() //문서에서도 f12에서도 모두 사라짐
+
+
+    //replaceAll, replaceWith : 선택한 요소를 새 요소로 변경
+    $('h1').replaceWith('<h3>replace with 바꿔버리기</h3>')
+    $('<p>replace</p>').replaceAll('.box2 div')
+
+
+    //unwrap, wrap, wrapAll, wrapInner
+    $('span').unwrap() //부모요소를 삭제. 즉, 여기서는 p가 사라짐.
+    //내용은 그대로지만 싸고있던 p 자체를 삭제시켜버림.
+    $('.p1').wrap('<div />') //선택한 요소를 감싸줌
+    $('.box3 p').wrapAll('<div />') 
+</script>
+
+</html>

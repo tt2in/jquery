@@ -1,0 +1,35 @@
+.container{
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px 10px;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.box1{
+    background-color: orangered;
+}
+.box2{
+    background-color: skyblue;
+}
+.box3{
+    background-color: yellowgreen;
+}
+.box4{
+    background-color:orchid;
+}
+
+.btns{
+    margin-top: 20px;
+}
+
+button{
+    padding: 4px 10px;
+    cursor: pointer;
+}

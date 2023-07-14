@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-auto slider</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>auto slider</h1>
+        <div class="slider">
+            <ul class="slide">
+                <li><img src="../images/img_01.jpg" alt=""></li>
+                <li><img src="../images/img_02.jpg" alt=""></li>
+                <li><img src="../images/img_03.jpg" alt=""></li>
+                <li><img src="../images/img_04.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>        
+
+    <script>
+        function slideStart(){
+            timer = setInterval(function(){
+                $('.slide').animate({left:-800},function(){
+                    $('.slide li:first').appendTo('.slide')
+                    $('.slide').css('left',0)
+                })
+            },2000)
+        }
+
+        $('.slide').hover(function(){
+            clearInterval(timer)
+        },function(){
+            slideStart()
+        })
+
+        slideStart()
+    </script>
+</body>
+</html>

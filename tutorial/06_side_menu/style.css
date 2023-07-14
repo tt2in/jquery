@@ -1,0 +1,42 @@
+h1{
+    margin: 50px 0;
+    text-align: center;
+}
+
+.side{
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    padding: 32px;
+    transition: right 0.5s;
+}
+
+.side.active{right: 0;}
+
+.btn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.banner{
+    height: 100px;
+    background-color: #eee;
+    margin: 10px 0;
+}
+
+ul{
+    margin: 20px 0;
+}
+
+ul li{
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}

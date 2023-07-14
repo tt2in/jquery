@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-확대 축소</title>
+    <script src="./script/jquery-1.12.4.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="btns">
+        <button class="minus">-</button>
+        <button class="default">100%</button>
+        <button class="plus">+</button>
+    </div>    
+    <p class="fontSize">font size : <span>14</span>px</p>
+
+    <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae provident voluptatem quae maxime vel inventore! Tenetur vel omnis magni ratione!</p>
+
+    <script>
+        //max 20, min 8
+        let fontSize =14
+        $('body').css('fontSize',fontSize)
+        $('.btns button').on('click',function(){
+            if($(this).hasClass('plus')){
+                if(fontSize>=20) return
+                fontSize++
+            }else if($(this).hasClass('minus')){
+                if(fontSize<=8) return
+                fontSize--
+            }else{
+                fontSize=14
+            }  
+            $('.fontSize span').text(fontSize)
+            $('body').css('fontSize',fontSize)
+        })
+    </script>
+</body>
+</html>

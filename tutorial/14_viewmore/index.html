@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-view more</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../script/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>view more</h1>
+        <div class="main">
+            <ul class="list">
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+                <li>내용</li>
+            </ul>
+            <button id="btn">더보기</button>
+        </div>
+    </div>        
+
+    <script>
+       $('.list').find('li').slice(0,9).show()      //index 0~8까지 보여줌
+       $('#btn').on('click',function(){
+            $('.list').find('li:hidden').slice(0,9).show()
+            if($('.list').find('li:hidden').length <=0){
+                $(this).hide()
+                alert('더 이상 없습니다.')
+            }
+       })
+    </script>
+</body>
+</html>
